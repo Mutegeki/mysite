@@ -65,5 +65,5 @@ def driver(request):
             thumb=request.POST['file']
 		)
 		driver.save()
-		driver = Driver.objects.all()
-	return render (request, 'car/driverlist.html', {'driver':driver})
+		drivers = Driver.objects.all()
+	return render (request, 'car/driverlist.html', {'drivers':drivers})

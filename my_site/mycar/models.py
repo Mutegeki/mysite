@@ -25,7 +25,7 @@ class Driver(models.Model):
 	permit=models.CharField(max_length=40, unique=True)
 	nation=models.CharField(max_length=15)
 	district=models.CharField(max_length=30)
-	thumb=models.ImageField(default='default.png',blank=True)
+	#thumb=models.ImageField(default='default.png',blank=True)
 	
 
 	
