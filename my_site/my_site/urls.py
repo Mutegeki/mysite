@@ -4,6 +4,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from. import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 import mycar
 
 urlpatterns = [
@@ -19,4 +20,4 @@ urlpatterns = [
 
 urlpatterns+= staticfiles_urlpatterns()
 
-#urlpatterns += static(settings.MEDIA)
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

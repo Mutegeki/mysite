@@ -17,8 +17,19 @@ class Car(models.Model):
 
 
 class Driver(models.Model):
-	"""docstring for Driver"""
+	first_name=models.CharField(max_length=30,)
+	last_name=models.CharField(max_length=30)
+	date_of_birth=models.DateField()
+	sex=models.CharField()
+	phone_no=models.CharField(max_length=13, unique=True)
+	pertmit=models.CharField()
+	nation=models.CharField()
+	district=models.CharField()
+	thumb=models.ImageField( default='default.png',blank=True)
 	
+
+	
+
 		
 
 
