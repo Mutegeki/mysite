@@ -4,7 +4,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from. import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.conf import settings
 import mycar
 
 urlpatterns = [
@@ -13,7 +12,6 @@ urlpatterns = [
     url(r'^getdata/',include('mycar.urls')),
     url(r'^showcar_list/', mycar.views.showcar_list),
    	url(r'^driver/', mycar.views.driver),
-
     url(r'^about/$', views.about),
     url(r'^$', views.homepage),
 ]

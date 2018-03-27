@@ -62,8 +62,8 @@ def driver(request):
             permit=request.POST['permit'],
             nation=request.POST['nation'],
             district=request.POST['district'],
-            #thumb=request.POST['file']
+            thumb=request.POST['file']
 		)
 		driver.save()
 		drivers = Driver.objects.all()
-	return render (request, 'car/driverlist.html', {'drivers':drivers})
+	return render(request,'car/driverlist.html', {'drivers':drivers})
