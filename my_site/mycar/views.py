@@ -16,7 +16,8 @@ def car_list(request):
 				reg_no=request.POST['regno'],
 				year_of_manufacture=request.POST['year_m'],
 				year_of_purchase=request.POST['year_p'],
-				total_mileage_in_km = request.POST['dist'])
+				total_mileage_in_km = request.POST['dist']
+		    )
 				#save them to the datadase
 			car.save()
 			#after saving them show
@@ -51,4 +52,18 @@ def showcar_list(request):
 
 
 def driver(request):
-	return render (request, 'car/driver.html')
+	if request.method == 'POST':
+		driver = Driver(
+			first_name=request.POST['name'],
+            last_name=request.POST['name1'],
+            date_of_birth=request.POST['date'],
+            sex=request.POST['sex'],
+            phone_no=request.POST['phone'],
+            permit=request.POST['permit'],
+            nation=request.POST['nation'],
+            district=request.POST['district'],
+            thumb=request.POST['file']
+		)
+		driver.save()
+		driver = Driver.objects.all()
+	return render (request, 'car/driverlist.html', {'driver':driver})

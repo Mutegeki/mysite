@@ -22,7 +22,7 @@ class Driver(models.Model):
 	date_of_birth=models.DateField()
 	sex=models.CharField()
 	phone_no=models.CharField(max_length=13, unique=True)
-	pertmit=models.CharField()
+	permit=models.CharField()
 	nation=models.CharField()
 	district=models.CharField()
 	thumb=models.ImageField( default='default.png',blank=True)
