@@ -45,12 +45,12 @@ def car_list(request):
  
 	#return render(request,'car/car_list.html')
 
-
 def showcar_list(request):
 	cars = Car.objects.all()
 	return render(request,'car/showcar_list.html', {'cars':cars})
 
 
+@csrf_exempt
 def driver(request):
 	if request.method == 'POST':
 		driver = Driver(
@@ -66,4 +66,9 @@ def driver(request):
 		)
 		driver.save()
 		drivers = Driver.objects.all()
-	return render(request,'car/driverlist.html', {'drivers':drivers})
+		return render(request,'car/driverlist.html', {'drivers':drivers})
+
+	else:
+	    template = loader.get_template('car/driver.html')
+	return HttpResponse(template.render())
+

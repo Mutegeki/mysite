@@ -22,6 +22,7 @@
                 <th>Photo</th>
             </tr>
         </thead>
+
         {% for driver in drivers%}
         <tbody>
             <tr>
@@ -29,8 +30,8 @@
                 <td>{{driver.last_name}}</td>
                 <td>{{driver.date_of_birth}}</td>
                 <td>{{driver.sex}}</td>
-                <td>{{driver.Phone_no}}</td>
-                <td>{{driver.Permit}}</td>
+                <td>{{driver.phone_no}}</td>
+                <td>{{driver.permit}}</td>
                 <td>{{driver.nation}}</td>
                 <td>{{driver.district}}</td>
                 <td><img src="{{driver.thumb.url}}"/></td>
