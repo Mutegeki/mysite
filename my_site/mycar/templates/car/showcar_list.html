@@ -5,27 +5,63 @@
 	<title>cars</title>
 </head>
 <body>
-	<h1>List of cars</h1>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Reg no</th>
-				<th>Year of manufacture</th>
-				<th>Year of purchase</th>
-				<th>Total Distance in km</th>
-			</tr>
-		</thead>
-		{% for car in cars%}
-		<tbody>
-			<tr>
-				<td>{{car.reg_no}}</td>
-				<td>{{car.year_of_manufacture}}</td>
-				<td>{{car.year_of_purchase}}</td>
-				<td>{{car.total_mileage_in_km}}</td>
-			</tr>
-		</tbody>
-		{% endfor %}
-	</table>
-
+	<div>
+		<h1>List of cars</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Reg no</th>
+					<th>Year of manufacture</th>
+					<th>Year of purchase</th>
+					<th>Total Distance in km</th>
+				</tr>
+			</thead>
+			{% for car in cars%}
+			<tbody>
+				<tr>
+					<td>{{car.reg_no}}</td>
+					<td>{{car.year_of_manufacture}}</td>
+					<td>{{car.year_of_purchase}}</td>
+					<td>{{car.total_mileage_in_km}}</td>
+				</tr>
+			</tbody>
+			{% endfor %}
+		</table>
+		<h1>Informantion About Drivers</h1>
+		<table class="table1">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Date of birth</th>
+					<th>Sex</th>
+					<th>Phone no</th>
+					<th>Permit no</th>
+					<th>Nationality</th>
+					<th>District</th>
+					<th>Photo</th>
+				</tr>
+			</thead>
+		
+			{% for driver in drivers%}
+			<tbody>
+				<tr>
+					<td>{{driver.first_name}}</td>
+					<td>{{driver.last_name}}</td>
+					<td>{{driver.date_of_birth}}</td>
+					<td>{{driver.sex}}</td>
+					<td>{{driver.phone_no}}</td>
+					<td>{{driver.permit}}</td>
+					<td>{{driver.nation}}</td>
+					<td>{{driver.district}}</td>
+					<td>
+						<img src="{{driver.thumb.url}}" />
+					</td>
+		
+				</tr>
+			</tbody>
+			{% endfor %}
+		</table>
+	</div>
 </body>
 </html>

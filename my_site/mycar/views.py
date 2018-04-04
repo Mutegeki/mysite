@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django import forms
 from django.shortcuts import render, redirect
 from.models import Car, Driver
 from django.http import HttpResponse
@@ -72,3 +73,6 @@ def driver(request):
 	    template = loader.get_template('car/driver.html')
 	return HttpResponse(template.render())
 
+def driver_list(request):
+	drivers = Driver.objects.all()
+	return render(request,'car/showcar_list.html', {'drivers':drivers})
