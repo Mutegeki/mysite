@@ -44,11 +44,8 @@ def car_list(request):
 	
 
  
-	#return render(request,'car/car_list.html')
+	
 
-#def showcar_list(request):
-#	cars = Car.objects.all()
-#	return render(request,'car/showcar_list.html', {'cars':cars})
 
 
 @csrf_exempt

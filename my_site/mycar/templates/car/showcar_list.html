@@ -19,7 +19,10 @@
 			{% for car in cars%}
 			<tbody>
 				<tr>
-					<td><a href="#">{{car.reg_no}}</a></td>
+					<td><div class="alert alert-light" role="alert">
+						<a href="#" class="alert-link">{{car.reg_no}}</a>
+					</div></td>
+					<!--<td><a href="#">{{car.reg_no}}</a></td>-->
 					<td>{{car.year_of_manufacture}}</td>
 					<td>{{car.year_of_purchase}}</td>
 					<td>{{car.total_mileage_in_km}}</td>
