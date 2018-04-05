@@ -41,13 +41,18 @@ def car_list(request):
 	    template = loader.get_template('car/car_list.html')
 	return HttpResponse(template.render())
 
-	
-
+@csrf_exempt
+def service(request):
+	if request.method == 'POST':
+		service = Service(
+			distance=request.POST['distance']
+		)
+		service.save()
+		return render(request,'homepage.html')
+	else:
+	    template = loader.get_template('car/service.html')
+	return HttpResponse(template.render())
  
-	
-
-
-
 @csrf_exempt
 def driver(request):
 	if request.method == 'POST':
@@ -69,11 +74,6 @@ def driver(request):
 	else:
 	    template = loader.get_template('car/driver.html')
 	return HttpResponse(template.render())
-
-#def driver_list(request):
-	#drivers = Driver.objects.all()
-	#return render(request,'car/showcar_list.html', {'drivers':drivers})
-
 
 def showcar_list(request):
 	cars = Car.objects.all()
