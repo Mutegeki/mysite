@@ -2,7 +2,7 @@
 #from __future__ import unicode_literals
 
 from django.db import models
-
+from django.forms import ModelForm
 # Create your models here.
 class Car(models.Model):
 	reg_no=models.CharField(max_length=10, unique=True)
@@ -25,7 +25,7 @@ class Driver(models.Model):
 	permit=models.CharField(max_length=40, unique=True)
 	nation=models.CharField(max_length=15)
 	district=models.CharField(max_length=30)
-	thumb=models.ImageField(default='default.png',blank=True)
+	#thumb=models.ImageField(default='default.png',blank=True)
 	
 
 	

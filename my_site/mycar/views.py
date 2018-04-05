@@ -46,9 +46,9 @@ def car_list(request):
  
 	#return render(request,'car/car_list.html')
 
-def showcar_list(request):
-	cars = Car.objects.all()
-	return render(request,'car/showcar_list.html', {'cars':cars})
+#def showcar_list(request):
+#	cars = Car.objects.all()
+#	return render(request,'car/showcar_list.html', {'cars':cars})
 
 
 @csrf_exempt
@@ -63,7 +63,7 @@ def driver(request):
             permit=request.POST['permit'],
             nation=request.POST['nation'],
             district=request.POST['district'],
-            thumb=request.POST['file']
+            #thumb=request.POST['file']
 		)
 		driver.save()
 		drivers = Driver.objects.all()
@@ -73,6 +73,12 @@ def driver(request):
 	    template = loader.get_template('car/driver.html')
 	return HttpResponse(template.render())
 
-def driver_list(request):
+#def driver_list(request):
+	#drivers = Driver.objects.all()
+	#return render(request,'car/showcar_list.html', {'drivers':drivers})
+
+
+def showcar_list(request):
+	cars = Car.objects.all()
 	drivers = Driver.objects.all()
-	return render(request,'car/showcar_list.html', {'drivers':drivers})
+	return render(request, 'car/showcar_list.html', {'cars': cars, 'drivers':drivers})

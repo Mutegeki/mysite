@@ -19,7 +19,7 @@
 			{% for car in cars%}
 			<tbody>
 				<tr>
-					<td>{{car.reg_no}}</td>
+					<td><a href="#">{{car.reg_no}}</a></td>
 					<td>{{car.year_of_manufacture}}</td>
 					<td>{{car.year_of_purchase}}</td>
 					<td>{{car.total_mileage_in_km}}</td>
@@ -39,7 +39,7 @@
 					<th>Permit no</th>
 					<th>Nationality</th>
 					<th>District</th>
-					<th>Photo</th>
+					<!--<th>Photo</th>-->
 				</tr>
 			</thead>
 		
@@ -55,7 +55,7 @@
 					<td>{{driver.nation}}</td>
 					<td>{{driver.district}}</td>
 					<td>
-						<img src="{{driver.thumb.url}}" />
+						<!--<img src="{{driver.thumb.url}}" />-->
 					</td>
 		
 				</tr>
