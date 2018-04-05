@@ -28,7 +28,9 @@ class Driver(models.Model):
 	#thumb=models.ImageField(default='default.png',blank=True)
 	
 
-	
+class Service(models.Model):
+	distance=models.CharField(max_length=15)
+	time=models.TimeField(auto_now_add=True)
 
 		
 

@@ -34,7 +34,7 @@ def car_list(request):
 
 		    #getting our showcar template
   		
-		return render(request,'car/showcar_list.html',{'cars':cars})
+		return render(request,'car/service.html')
 	else:
 	    #if post request is not true 
 	    #returing the form template
