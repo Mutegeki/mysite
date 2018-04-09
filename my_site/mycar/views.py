@@ -34,21 +34,22 @@ def car_list(request):
 
 		    #getting our showcar template
   		
-		return render(request,'car/service.html')
+		return render(request,'car/showcar_list.html', {'cars':cars})
 	else:
 	    #if post request is not true 
 	    #returing the form template
 	    template = loader.get_template('car/car_list.html')
 	return HttpResponse(template.render())
 
+#def car_detail(request,)
 @csrf_exempt
 def service(request):
 	if request.method == 'POST':
 		service = Service(
-			distance=request.POST['distance']
+			distance=request.POST['distance'],
 		)
 		service.save()
-		return render(request,'homepage.html')
+		return render(request,'car/service.html', {'service':service})
 	else:
 	    template = loader.get_template('car/service.html')
 	return HttpResponse(template.render())
