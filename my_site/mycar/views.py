@@ -7,6 +7,7 @@ from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 from django.db import IntegrityError
 
+
 #disabling csrf (cross site request forgery)
 @csrf_exempt
 def car_list(request):
@@ -22,11 +23,11 @@ def car_list(request):
 				#save them to the datadase
 			car.save()
 			#after saving them show
-			#context={
-			#	'car':car
-		    #}
+			context={
+				'car':car
+		    }
             # getting data from database
-			cars = Car.objects.all()
+			#cars = Car.objects.all()
 		except IntegrityError as e:
 			print e
 			context={'error':"its already exists"}
@@ -34,14 +35,19 @@ def car_list(request):
 
 		    #getting our showcar template
   		
-		return render(request,'car/showcar_list.html', {'cars':cars})
+		return render(request,'car/showcar.html', context)
 	else:
 	    #if post request is not true 
 	    #returing the form template
 	    template = loader.get_template('car/car_list.html')
 	return HttpResponse(template.render())
 
-#def car_detail(request,)
+@csrf_exempt
+def car_detail(request, reg_no):
+	#return HttpResponse(reg_no)
+	car = Car.objects.get(reg_no=reg_no)
+	return render(request,'car/showcar.html',{'car':car})
+
 @csrf_exempt
 def service(request):
 	if request.method == 'POST':

@@ -9,8 +9,9 @@ import mycar
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^car/', include('mycar.urls')),
-    url(r'^getdata/',include('mycar.urls')),
+    #url(r'^getdata/',include('mycar.urls')),
     url(r'^showcar_list/', mycar.views.showcar_list),
+    url(r'^car_detail/',mycar.views.car_detail),
    	url(r'^driver/', mycar.views.driver),
     url(r'^about/$', views.about),
     url(r'^$', views.homepage),
