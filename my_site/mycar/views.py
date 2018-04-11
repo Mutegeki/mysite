@@ -65,7 +65,8 @@ def car_detail(request, reg_no):
 			distance=request.POST['distance'],
 		)
 		service.save()
-	return render(request, 'car/showcar.html', {'car': car})
+		services  = Service.objects.all().order_by('date')
+	return render(request, 'car/showcar.html', {'car': car, 'services':services})
 
 @csrf_exempt
 def driver(request):
