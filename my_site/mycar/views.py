@@ -42,11 +42,6 @@ def car_list(request):
 	    template = loader.get_template('car/car_list.html')
 	return HttpResponse(template.render())
 
-@csrf_exempt
-def car_detail(request, reg_no):
-	#return HttpResponse(reg_no)
-	car = Car.objects.get(reg_no=reg_no)
-	return render(request,'car/showcar.html',{'car':car})
 
 @csrf_exempt
 def service(request):
@@ -59,7 +54,19 @@ def service(request):
 	else:
 	    template = loader.get_template('car/service.html')
 	return HttpResponse(template.render())
- 
+
+
+@csrf_exempt
+def car_detail(request, reg_no):
+	#return HttpResponse(reg_no)
+	car = Car.objects.get(reg_no=reg_no)
+	if request.method == 'POST':
+		service = Service(
+			distance=request.POST['distance'],
+		)
+		service.save()
+	return render(request, 'car/showcar.html', {'car': car})
+
 @csrf_exempt
 def driver(request):
 	if request.method == 'POST':

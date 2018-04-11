@@ -30,7 +30,7 @@ class Driver(models.Model):
 
 class Service(models.Model):
 	distance=models.CharField(max_length=15)
-	time=models.TimeField(auto_now_add=True)
+	date=models.DateTimeField(auto_now_add=True)
 
 		
 
