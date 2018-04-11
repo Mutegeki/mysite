@@ -29,6 +29,26 @@
 	
 		<button type="submit" class="btn btn-primary">save</button>
 	</form>
+	<h1>Informantion About Drivers</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Service in km</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+	
+		{% for service in services%}
+		<tbody>
+			<tr>
+				<td>{{service.distance}}</td>
+				<td>{{service.date}}</td>
+	
+			</tr>
+		</tbody>
+		{% endfor %}
+	</table>
+
 
 </body>
 </html>
