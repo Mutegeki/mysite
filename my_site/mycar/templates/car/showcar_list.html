@@ -12,32 +12,7 @@
 			<a href="{% url 'mycar:details' reg_no=car.reg_no %}" class="alert-link">{{car.reg_no}}</a>
 		</div>
 		{% endfor %}
-		<!--<table class="table">
-			<thead>
-				<tr>
-					<th>Reg no</th>
-					<th>Year of manufacture</th>
-					<th>Year of purchase</th>
-					<th>Total Distance in km</th>
-				</tr>
-			</thead>
-			{% for car in cars%}
-			<div class="alert alert-light" role="alert">
-				<a href="car_detail" class="alert-link">{{car.reg_no}}</a>
-			</div>
-			<tbody>
-				<tr>
-					<td><div class="alert alert-light" role="alert">
-						<a href="car_detail" class="alert-link">{{car.reg_no}}</a>
-					</div></td>
-					<!--<td><a href="#">{{car.reg_no}}</a></td>
-					<td>{{car.year_of_manufacture}}</td>
-					<td>{{car.year_of_purchase}}</td>
-					<td>{{car.total_mileage_in_km}}</td>
-				</tr>
-			</tbody>
-			{% endfor %}
-		</table>-->
+		
 		<h1>Informantion About Drivers</h1>
 		<table class="table1">
 			<thead>

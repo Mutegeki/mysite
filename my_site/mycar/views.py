@@ -65,8 +65,12 @@ def car_detail(request, reg_no):
 			distance=request.POST['distance'],
 		)
 		service.save()
-		services = Service.objects.all().order_by('date')
-	return render(request, 'car/showcar.html', {'car':car, })
+		services = Service.objects.all.order_by('date')
+		return render(request, 'car/showcar.html', {'car':car, 'services':services})
+	
+	
+
+	
 
 @csrf_exempt
 def driver(request):
@@ -85,7 +89,6 @@ def driver(request):
 		driver.save()
 		drivers = Driver.objects.all()
 		return render(request,'car/driverlist.html', {'drivers':drivers})
-
 	else:
 	    template = loader.get_template('car/driver.html')
 	return HttpResponse(template.render())

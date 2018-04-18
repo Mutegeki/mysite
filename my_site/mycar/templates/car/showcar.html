@@ -21,7 +21,8 @@
 	  </div>
 	</form>
 	<h1>Add Service</h1>
-	<form method="post">
+	 (% if service != None %)
+	 <form method="post">
 		<div class="form-group">
 			<label for="formGroupExampleInput2">Servered At</label>
 			<input type="text" class="form-control" name="distance" id="formGroupExampleInput2" placeholder="distance in km">
@@ -29,6 +30,9 @@
 	
 		<button type="submit" class="btn btn-primary">save</button>
 	</form>
+	 (% else %)
+	<p>Invalid service.ID.</p>
+	(% endif %)
 	<h1>Informantion for the Service</h1>
 	<table class="table">
 		<thead>
@@ -38,7 +42,7 @@
 			</tr>
 		</thead>
 	
-		{% for service in services%}
+		<!--{% for service in services%}-->
 		<tbody>
 			<tr>
 				<td>{{service.distance}}</td>
@@ -46,7 +50,7 @@
 	
 			</tr>
 		</tbody>
-		{% endfor %}
+	<!--	{% endfor %}-->
 	</table>
 
 

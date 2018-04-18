@@ -9,6 +9,8 @@ class Car(models.Model):
 	year_of_manufacture=models.DateField()
 	year_of_purchase=models.DateField()
 	total_mileage_in_km=models.IntegerField()
+	
+	
 
 
 
@@ -31,7 +33,8 @@ class Driver(models.Model):
 class Service(models.Model):
 	distance=models.CharField(max_length=15)
 	date=models.DateTimeField(auto_now_add=True)
-
+	car = models.ForeignKey(Car)
+	
 		
 
 
