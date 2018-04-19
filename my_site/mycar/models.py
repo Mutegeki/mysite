@@ -10,12 +10,8 @@ class Car(models.Model):
 	year_of_purchase=models.DateField()
 	total_mileage_in_km=models.IntegerField()
 	
-	
-
-
-
 	#def __str__(self):
-		#return self.
+	#	return self.reg_no
 
 
 class Driver(models.Model):

@@ -8,9 +8,9 @@
 	<div>
 		<h1>List of cars</h1>
 		{% for car in cars%}
-		<div class="alert alert-light" role="alert">
-			<a href="{% url 'mycar:details' reg_no=car.reg_no %}" class="alert-link">{{car.reg_no}}</a>
-		</div>
+		    <div class="alert alert-light" role="alert">
+			    <a href="{% url "mycar:details" reg_no=car.reg_no %}" class="alert-link">{{car.reg_no}}</a>
+		    </div>
 		{% endfor %}
 		
 		<h1>Informantion About Drivers</h1>

@@ -63,12 +63,13 @@ def car_detail(request, reg_no):
 	if request.method == 'POST':
 		service = Service(
 			distance=request.POST['distance'],
+			car_id=request.POST['car_id']
 		)
 		service.save()
-		services = Service.objects.all.order_by('date')
-		return render(request, 'car/showcar.html', {'car':car, 'services':services})
-	
-	
+		return render(request, 'car/showcar.html', {'car': car, 'service': service})
+	else:
+		services = Service.objects.filter(car_id=car.id).order_by('date')
+		return render(request, 'car/showcar.html', {'car': car, 'services': services})
 
 	
 
