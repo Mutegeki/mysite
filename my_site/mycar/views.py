@@ -48,6 +48,20 @@ def service(request):
 	if request.method == 'POST':
 		service = Service(
 			distance=request.POST['distance'],
+			engine=request.POST['engine'],
+			gear=request.POST['gear'],
+			diff=request.POST['diff'],
+			raditor=request.POST['raditor'], 
+			breaks=request.POST['breaks'],
+			steering=request.POST['steering'], 
+			battery=request.POST['battery'],
+			wind=request.POST['wind'], 
+			air=request.POST['air'],
+			spark=request.POST['spark'],
+			fuel=request.POST['fuel'],
+			oil=request.POST['oil'],
+			flush=request.POST['flush'],
+			greasing=request.POST['greasing']
 		)
 		service.save()
 		return render(request,'car/service.html', {'service':service})
