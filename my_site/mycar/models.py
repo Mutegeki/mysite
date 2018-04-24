@@ -44,6 +44,7 @@ class Service(models.Model):
 	oil = models.CharField(max_length=10)
 	flush = models.CharField(max_length=10)
 	greasing = models.CharField(max_length=10)
+	nexts = models.CharField(max_length=10)
 	car = models.ForeignKey(Car)
 	
 		
