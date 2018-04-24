@@ -62,6 +62,7 @@ def service(request):
 			oil=request.POST['oil'],
 			flush=request.POST['flush'],
 			greasing=request.POST['greasing']
+			next=request.POST['next']
 		)
 		service.save()
 		return render(request,'car/service.html', {'service':service})
