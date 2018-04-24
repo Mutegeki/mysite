@@ -27,8 +27,23 @@ class Driver(models.Model):
 	
 
 class Service(models.Model):
-	distance=models.CharField(max_length=15)
-	date=models.DateTimeField(auto_now_add=True)
+	distance = models.CharField(max_length=15)
+	date = models.DateTimeField(auto_now_add=True)
+	engine = models.CharField(max_length=10)
+	engine = models.CharField(max_length=10)
+	gear = models.CharField(max_length=10)
+	diff = models.CharField(max_length=10)
+	raditor = models.CharField(max_length=10)
+	breaks = models.CharField(max_length=10)
+	steering = models.CharField(max_length=10)
+	battery = models.CharField(max_length=10)
+	wind = models.CharField(max_length=10)
+	air = models.CharField(max_length=10)
+	spark = models.CharField(max_length=10)
+	fuel = models.CharField(max_length=10)
+	oil = models.CharField(max_length=10)
+	flush = models.CharField(max_length=10)
+	greasing = models.CharField(max_length=10)
 	car = models.ForeignKey(Car)
 	
 		
