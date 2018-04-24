@@ -52,8 +52,14 @@ def service(request):
 		service.save()
 		return render(request,'car/service.html', {'service':service})
 	else:
-	    template = loader.get_template('car/service.html')
+	    template = loader.get_template('car/service.html')	
 	return HttpResponse(template.render())
+
+
+@csrf_exempt
+def repair(request):
+	return render(request, 'car/repair.html')
+
 
 
 @csrf_exempt

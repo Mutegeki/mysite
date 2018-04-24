@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^car_detail/',mycar.views.car_detail),
    	url(r'^driver/', mycar.views.driver),
     url(r'^service/', mycar.views.service),
+    url(r'^repair/', mycar.views.repair),
     url(r'^about/$', views.about),
     url(r'^$', views.homepage),
 ]
