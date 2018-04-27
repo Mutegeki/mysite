@@ -139,6 +139,7 @@
 		<thead>
 			<tr>
 				<th>Service (KM)</th>
+				<th>Date</th>
 				<th>Engine Oil</th>
 				<th>Gear Boil Oil</th>
 				<th>Differential Oil</th>
@@ -156,8 +157,7 @@
 				<th>next service(KM)</th>
 			</tr>
 		</thead>
-	
-		<!--{% for service in services%}-->
+		{% for service in services %}
 		<tbody>
 			<tr>
 				<td>{{service.distance}}</td>
@@ -180,7 +180,7 @@
 	
 			</tr>
 		</tbody>
-	<!--	{% endfor %}-->
+		{% endfor %}
 	</table>
 
 

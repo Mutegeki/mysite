@@ -61,7 +61,7 @@ def service(request):
 			fuel=request.POST['fuel'],
 			oil=request.POST['oil'],
 			flush=request.POST['flush'],
-			greasing=request.POST['greasing']
+			greasing=request.POST['greasing'],
 			nexts=request.POST['nexts']
 		)
 		service.save()
@@ -84,6 +84,21 @@ def car_detail(request, reg_no):
 	if request.method == 'POST':
 		service = Service(
 			distance=request.POST['distance'],
+			engine=request.POST['engine'],
+			gear=request.POST['gear'],
+			diff=request.POST['diff'],
+			raditor=request.POST['raditor'],
+			breaks=request.POST['breaks'],
+			steering=request.POST['steering'],
+			battery=request.POST['battery'],
+			wind=request.POST['wind'],
+			air=request.POST['air'],
+			spark=request.POST['spark'],
+			fuel=request.POST['fuel'],
+			oil=request.POST['oil'],
+			flush=request.POST['flush'],
+			greasing=request.POST['greasing'],
+			nexts=request.POST['nexts'],
 			car_id=request.POST['car_id']
 		)
 		service.save()
