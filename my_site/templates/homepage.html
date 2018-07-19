@@ -1,6 +1,36 @@
 {% extends 'base_layout.html'%}
 
 {% block content %}
+    <nav>
+		<a href="#" class="nav-toggle-btn"></a>
+		<ul>
+			<div class="logo">MyCar <span class="lite">Track</span></div>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Vehicle</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Car</a>
+					<a class="dropdown-item" href="#">Service</a>
+					<a class="dropdown-item" href="#">Repair</a>
+					<a class="dropdown-item" href="#">Track trips</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Tracks</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Trip</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Drivers</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Driver</a>
+					<a class="dropdown-item" href="#">Trip taken</a>
+				</div>
+			</div>
+			<li><a href="#"></a>Car</li>
+		</ul>
+	</nav>
+    
 	<!-- container section start -->
 	<section id="container" class="">
 		<header class="header dark-bg">
@@ -61,7 +91,7 @@
         	<div id="sidebar" class="nav-collapse ">
         		<!-- sidebar menu start-->
         		<ul class="sidebar-menu">
-        			<!--<li class="active">
+        			<!--<li class="active">Policy
         				<a class="" href="index.html">
         					<i class="fa fa-user"></i>
         					<span>Dashboard</span>
