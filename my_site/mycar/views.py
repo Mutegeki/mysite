@@ -9,7 +9,7 @@ from django.db import IntegrityError
 
 
 #disabling csrf (cross site request forgery)
-@csrf_exempt
+
 def car_list(request):
 	# if post request came
 	if request.method == 'POST':
@@ -43,7 +43,6 @@ def car_list(request):
 	return HttpResponse(template.render())
 
 
-@csrf_exempt
 def service(request):
 	if request.method == 'POST':
 		service = Service(
@@ -71,13 +70,13 @@ def service(request):
 	return HttpResponse(template.render())
 
 
-@csrf_exempt
+
 def repair(request):
 	return render(request, 'car/repair.html')
 
 
 
-@csrf_exempt
+
 def car_detail(request, reg_no):
 	#return HttpResponse(reg_no)
 	car = Car.objects.get(reg_no=reg_no)
@@ -107,9 +106,7 @@ def car_detail(request, reg_no):
 		services = Service.objects.filter(car_id=car.id).order_by('date')
 		return render(request, 'car/showcar.html', {'car': car, 'services': services})
 
-	
 
-@csrf_exempt
 def driver(request):
 	if request.method == 'POST':
 		driver = Driver(
