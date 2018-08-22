@@ -2,6 +2,7 @@
 {% block content %}
 	<div>
 		<h1>List of cars</h1>
+		{% csrf_token %}
 		{% for car in cars%}
 		    <div class="alert alert-light" role="alert">
 			    <a href="{% url "mycar:details" reg_no=car.reg_no %}" class="alert-link">{{car.reg_no}}</a>
