@@ -2,6 +2,7 @@
 {% block content %}
 	<h1>car details</h1>
 	<form>
+		{% csrf_token %}
 	  <div class="form-group">
 	    <label>Reg-no : {{car.reg_no}}</label>
 	  </div>

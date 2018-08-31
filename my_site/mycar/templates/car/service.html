@@ -2,6 +2,7 @@
 {% block content %}
     <h1>Car Service</h1>
     <form method="post">
+        {% csrf_token %}
         <div class="form-group">
             <label>Servered At</label>
             <input type="text" class="form-control" name="distance" id="service" placeholder="distance in km">
